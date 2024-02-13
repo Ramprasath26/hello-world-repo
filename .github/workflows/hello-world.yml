@@ -1,8 +1,14 @@
-name: Hello World
-'on': push
+name: Hello World! 
+
+on:
+  push:
+
 jobs:
-hello-job:
-runs-on: ubuntu-latest
-steps:
-  - name: Echo text
-    run: 'echo "Hello, world!"'
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Echo "Hello, world!"
+      run: echo "Hello, world!"
